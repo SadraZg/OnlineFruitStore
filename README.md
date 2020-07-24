@@ -8,11 +8,11 @@ There was a supplier-data directory in the linux virtual machine.
 Listing its content would give two subdirectories -> images and descriptions
 '/images' contain images of various fruits, while '/descriptions' has text files containing the description of each fruit.
 
->>> cat ~/supplier-data/descriptions/007.txt
-would return:
-    Mango
-    300 lbs
-    Mango contains higher levels of vitamin C than ordinary fruits. Eating mango ...
+>>> cat ~/supplier-data/descriptions/007.txt <br />
+would return: <br />
+    Mango <br />
+    300 lbs <br />
+    Mango contains higher levels of vitamin C than ordinary fruits. Eating mango ... <br />
 
 The first line contains the name of the fruit followed by the weight of the fruit and finally the description of the fruit.
 
@@ -110,13 +110,12 @@ mentioned above, an email should be sent with the following content:
 •	To: username@example.com
 •	Replace username with the username given in the Connection Details Panel on the right hand side.
 •	Subject line:
-------------------------------------------------------------------------------------------------------------------------------
-| Case                                                                                          Subject line                                                                  |
-| CPU usage is over 80%                                                             Error - CPU usage is over 80%                                    |
-| Available disk space is lower than 20%                                    Error - Available disk space is less than 20%               |
-| available memory is less than 500MB                                      Error - Available memory is less than 500MB              |
-| hostname "localhost" cannot be resolved to "127.0.0.1"         Error - localhost cannot be resolved to 127.0.0.1        |
-------------------------------------------------------------------------------------------------------------------------------
+Case                                                           Subject line
+CPU usage is over 80%                                          Error - CPU usage is over 80%
+Available disk space is lower than 20%                         Error - Available disk space is less than 20%
+available memory is less than 500MB                            Error - Available memory is less than 500MB
+hostname "localhost" cannot be resolved to "127.0.0.1"         Error - localhost cannot be resolved to 127.0.0.1
+
 •	E-mail Body: Please check your system and resolve the issue as soon as possible.
 Note: There is no attachment file here, so you must be careful while defining the generate_email() method in the
 emails.py script or you can create a separate generate_error_report() method for handling non-attachment email.
@@ -124,8 +123,8 @@ Next, go to the webmail inbox and refresh it. There should only be an email some
 don't see a new email.
 
 NOTE: You can test the health_check script by using stress module as below:
->>> import stress
->>> stress --cpu 8
+>>> import stress <br />
+>>> stress --cpu 8 <br />
 Allow the stress test to run, as it will maximize our CPU utilization. Now run health_check.py by opening another
 SSH connection to the linux-instance.
 It will result in an email sent to the webmail inbox. Its content is as below:
