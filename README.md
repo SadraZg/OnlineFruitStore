@@ -20,9 +20,9 @@ The first line contains the name of the fruit followed by the weight of the frui
 
 <h2> Working with supplier images </h2>
 In this section, you will write a Python script named 'changeImage.py' to process the supplier images.
-You will be using the PIL library to update all images within ~/supplier-data/images directory to the following specifications:
-•	Size: Change image resolution from 3000x2000 to 600x400 pixel
-•	Format: Change image format from .TIFF to .JPEG
+You will be using the PIL library to update all images within ~/supplier-data/images directory to the following specifications: <br />
+•	Size: Change image resolution from 3000x2000 to 600x400 pixel <br />
+•	Format: Change image format from .TIFF to .JPEG <br />
 After processing the images, save them in the same path ~/supplier-data/images, with a JPEG extension.
 
 
@@ -46,10 +46,10 @@ Write a Python script named run.py to process the text files (001.txt, 003.txt .
 directory. The script should turn the data into a JSON dictionary by adding all the required fields, including the image
 associated with the fruit (image_name), and uploading it to http://[linux-instance-external-IP]/fruits using the Python
 requests library.
-Note that all files are written in the following format, with each piece of information on its own line:
-•	name
-•	weight (in lbs)
-•	description
+Note that all files are written in the following format, with each piece of information on its own line: <br />
+•	name <br />
+•	weight (in lbs) <br />
+•	description <br />
 The data model in the Django application fruit has the following fields: name, weight, description and image_name.
 The weight field is defined as an integer field. So when you process the weight information of the fruit from the
 .txt file, you need to convert it into an integer. For example if the weight is "500 lbs", you need to drop "lbs" and
@@ -68,16 +68,16 @@ http://[linux-instance-external-IP]/fruits
 <h2> Generate a PDF report and send it through email </h2>
 Once the images and descriptions have been uploaded to the fruit store web-server, you will have to generate a PDF file
 to send to the supplier, indicating that the data was correctly processed. To generate PDF reports, you can use the
-ReportLab library. The content of the report should look like this:
-Processed Update on <Today's date>
-[blank line]
-name: Apple
-weight: 500 lbs
-[blank line]
-name: Avocado
-weight: 200 lbs
-[blank line]
-...
+ReportLab library. The content of the report should look like this: <br />
+Processed Update on <Today's date> <br />
+[blank line] <br />
+name: Apple <br />
+weight: 500 lbs <br />
+[blank line] <br />
+name: Avocado <br />
+weight: 200 lbs <br />
+[blank line] <br />
+... <br />
 You will need to pass the following arguments to the reports.generate_report method: the text description processed
 from the text files as the paragraph argument, the report title as the title argument, and the file path of the PDF
 to be generated as the attachment argument (use ‘/tmp/processed.pdf')
@@ -85,36 +85,36 @@ to be generated as the attachment argument (use ‘/tmp/processed.pdf')
 <h4> Send report through email </h4>
 Once the PDF is generated, you need to send the email using the emails.generate_email() and emails.send_email() methods.
 Define generate_email and send_email methods by importing necessary libraries.
-Use the following details to pass the parameters to emails.generate_email():
-•	From: automation@example.com
-•	To: username@example.com
-•	Replace username with the username given in the Connection Details Panel on the right hand side.
-•	Subject line: Upload Completed - Online Fruit Store
-•	E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email.
-•	Attachment: Attach the path to the file processed.pdf
+Use the following details to pass the parameters to emails.generate_email(): <br />
+•	From: automation@example.com <br />
+•	To: username@example.com <br />
+•	Replace username with the username given in the Connection Details Panel on the right hand side. <br />
+•	Subject line: Upload Completed - Online Fruit Store <br />
+•	E-mail Body: All fruits are uploaded to our website successfully. A detailed list is attached to this email. <br />
+•	Attachment: Attach the path to the file processed.pdf <br />
 
 
 
 <h2> Health check </h2>
 This is the last part of the lab, where you will have to write a Python script named health_check.py that will run in
 the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution.
-Moreover, this Python script should send an email if there are problems, such as:
-•	Report an error if CPU usage is over 80%
-•	Report an error if available disk space is lower than 20%
-•	Report an error if available memory is less than 500MB
-•	Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1"
+Moreover, this Python script should send an email if there are problems, such as: <br />
+•	Report an error if CPU usage is over 80% <br />
+•	Report an error if available disk space is lower than 20% <br />
+•	Report an error if available memory is less than 500MB <br />
+•	Report an error if the hostname "localhost" cannot be resolved to "127.0.0.1" <br />
 
 Complete the script to check the system statistics every 60 seconds, and in event of any issues detected among the ones
-mentioned above, an email should be sent with the following content:
-•	From: automation@example.com
-•	To: username@example.com
-•	Replace username with the username given in the Connection Details Panel on the right hand side.
-•	Subject line:
-Case                                                           Subject line
-CPU usage is over 80%                                          Error - CPU usage is over 80%
-Available disk space is lower than 20%                         Error - Available disk space is less than 20%
-available memory is less than 500MB                            Error - Available memory is less than 500MB
-hostname "localhost" cannot be resolved to "127.0.0.1"         Error - localhost cannot be resolved to 127.0.0.1
+mentioned above, an email should be sent with the following content: <br />
+•	From: automation@example.com <br />
+•	To: username@example.com <br />
+•	Replace username with the username given in the Connection Details Panel on the right hand side. <br />
+•	Subject line: <br />
+Case                                                           Subject line <br /> <br />
+CPU usage is over 80%                                          Error - CPU usage is over 80% <br />
+Available disk space is lower than 20%                         Error - Available disk space is less than 20% <br />
+available memory is less than 500MB                            Error - Available memory is less than 500MB <br />
+hostname "localhost" cannot be resolved to "127.0.0.1"         Error - localhost cannot be resolved to 127.0.0.1 <br />
 
 •	E-mail Body: Please check your system and resolve the issue as soon as possible.
 Note: There is no attachment file here, so you must be careful while defining the generate_email() method in the
