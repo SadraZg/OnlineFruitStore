@@ -18,7 +18,7 @@ The first line contains the name of the fruit followed by the weight of the frui
 
 
 
-<h2> Working with supplier images </h2>
+<h2> Working with supplier images </h2>   <h5> changeImage.py </h5>
 In this section, you will write a Python script named 'changeImage.py' to process the supplier images.
 You will be using the PIL library to update all images within ~/supplier-data/images directory to the following specifications: <br />
 •	Size: Change image resolution from 3000x2000 to 600x400 pixel <br />
@@ -27,7 +27,7 @@ After processing the images, save them in the same path ~/supplier-data/images, 
 
 
 
-<h2> Uploading images to web server </h2>
+<h2> Uploading images to web server </h2>   <h5> supplier_image_uplaod </h5>
 You have modified the fruit images through changeImage.py script. Now, you will have to upload these modified images to
 the web server that is handling the fruit catalog. To do that, you'll have to use the Python requests module to send the
 file contents to the [linux-instance-IP-Address]/upload URL.
@@ -38,7 +38,7 @@ directory that you've processed previously and uploads them to the web server fr
 
 
 
-<h2> Uploading the descriptions </h2>
+<h2> Uploading the descriptions </h2>   <h5> run.py </h5>
 The Django server was already set up inn the linux virtual machine to show the fruit catalog for your company.
 To add fruit images and their descriptions from the supplier on the fruit catalog web-server, create a new Python script
 that will automatically POST the fruit images and their respective description in JSON format.
@@ -65,7 +65,7 @@ http://[linux-instance-external-IP]/fruits
 
 
 
-<h2> Generate a PDF report and send it through email </h2>
+<h2> Generate a PDF report and send it through email </h2>   <h5> reports.py </h5>
 Once the images and descriptions have been uploaded to the fruit store web-server, you will have to generate a PDF file
 to send to the supplier, indicating that the data was correctly processed. To generate PDF reports, you can use the
 ReportLab library. The content of the report should look like this: <br />
@@ -82,7 +82,7 @@ You will need to pass the following arguments to the reports.generate_report met
 from the text files as the paragraph argument, the report title as the title argument, and the file path of the PDF
 to be generated as the attachment argument (use ‘/tmp/processed.pdf')
 
-<h4> Send report through email </h4>
+<h4> Send report through email </h4>   <h5> emails.py and report_email.py</h5>
 Once the PDF is generated, you need to send the email using the emails.generate_email() and emails.send_email() methods.
 Define generate_email and send_email methods by importing necessary libraries.
 Use the following details to pass the parameters to emails.generate_email(): <br />
@@ -95,7 +95,7 @@ Use the following details to pass the parameters to emails.generate_email(): <br
 
 
 
-<h2> Health check </h2>
+<h2> Health check </h2>   <h5> health_check.py </h5>
 This is the last part of the lab, where you will have to write a Python script named health_check.py that will run in
 the background monitoring some of your system statistics: CPU usage, disk space, available memory and name resolution.
 Moreover, this Python script should send an email if there are problems, such as: <br />
