@@ -110,11 +110,12 @@ mentioned above, an email should be sent with the following content: <br />
 •	To: username@example.com <br />
 •	Replace username with the username given in the Connection Details Panel on the right hand side. <br />
 •	Subject line: <br />
-Case                                                           Subject line <br /> <br />
-CPU usage is over 80%                                          Error - CPU usage is over 80% <br />
-Available disk space is lower than 20%                         Error - Available disk space is less than 20% <br />
-available memory is less than 500MB                            Error - Available memory is less than 500MB <br />
-hostname "localhost" cannot be resolved to "127.0.0.1"         Error - localhost cannot be resolved to 127.0.0.1 <br />
+| Case                                                        | Subject line                                           |
+|:-----------------------------------------------------------:|:------------------------------------------------------:|
+| CPU usage is over 80%                                       | Error - CPU usage is over 80%                          |
+| Available disk space is lower than 20%                      | Error - Available disk space is less than 20%          |
+| available memory is less than 500MB                         | Error - Available memory is less than 500MB            |
+| hostname "localhost" cannot be resolved to "127.0.0.1"      | Error - localhost cannot be resolved to 127.0.0.1      |
 
 •	E-mail Body: Please check your system and resolve the issue as soon as possible.
 Note: There is no attachment file here, so you must be careful while defining the generate_email() method in the
